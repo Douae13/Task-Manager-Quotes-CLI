@@ -1,0 +1,4 @@
+USERS                            TASKS
+id   username   password   |     id    user_id   TASK     done
+0    douae13    wtv2026    |     0       0       ARA102
+1    mina11     yay2030    |     1       0
