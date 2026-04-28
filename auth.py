@@ -26,8 +26,10 @@ def login(username, password):
 
     cursor.execute("SELECT id from users WHERE username=? and password=?",
                    (username, hash_password(password)))
+    
     user = cursor.fetchone()
-
+    conn.close()
+    
     if user:
         return user[0]
     return None
