@@ -1,6 +1,7 @@
 import db
 from auth import register, login
 from tasks import add_task, view_tasks, mark_done, delete_task
+from quotes import get_quote
 
 def task_menu(user_id):
     while True:
@@ -9,7 +10,9 @@ def task_menu(user_id):
         print("2. View Tasks")
         print("3. Mark Task as Done")
         print("4. Delete Task")
-        
+        print("5. Motivation")
+        print("6. Logout")
+
         choice = input("> ")
 
         if choice == "1":
@@ -29,6 +32,13 @@ def task_menu(user_id):
         elif choice == "4":
             task_id = input("Task ID: ")
             delete_task(task_id)
+
+        elif choice == "5":
+            print(get_quote())
+
+        elif choice == "6":
+            print("Logging out...")
+            break;
 
 def main():
     db.db_init()
